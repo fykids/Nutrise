@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
     id("kotlin-parcelize")
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +42,13 @@ android {
     buildFeatures {
         buildConfig = true
         viewBinding = true
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "META-INF/AL2.0"
+            excludes += "META-INF/LGPL2.1"
+        }
     }
 }
 
@@ -83,4 +91,10 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation("com.squareup.okio:okio:3.0.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:2.5.0")
 }
