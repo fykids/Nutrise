@@ -7,8 +7,7 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
@@ -23,10 +22,13 @@
         android:supportsRtl="true"
         android:theme="@style/ThemeOverlay.Theme.Nutrise.MediumContrast"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.setting.history.HistoryActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/file_paths"
-            tools:ignore="Deprecated" />
+            android:resource="@xml/file_paths" />
 
         <activity
             android:name=".ui.home.camera.CameraActivity"
@@ -55,7 +57,17 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>
