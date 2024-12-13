@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.capstone_bangkit.nutrise.databinding.FragmentSettingBinding
 import com.capstone_bangkit.nutrise.ui.auth.login.LoginActivity
+import com.capstone_bangkit.nutrise.ui.setting.history.HistoryActivity
 import com.capstone_bangkit.nutrise.ui.setting.useraccount.AccountActivity
 import com.capstone_bangkit.nutrise.userpref.UserPreferences
 import com.capstone_bangkit.nutrise.userpref.dataStore
@@ -25,7 +26,8 @@ class SettingFragment : Fragment() {
     private val settingViewModel : SettingViewModel by viewModels {
         SettingViewModelFactory(
             requireContext(),
-            UserPreferences.getInstance(requireContext().applicationContext.dataStore)
+            UserPreferences.getInstance(requireContext().applicationContext.dataStore),
+            requireActivity().application
         )
     }
 
@@ -42,6 +44,7 @@ class SettingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observeNameUser()
+        observeHistoryCount()
 
         binding.apply {
             logoutButton.setOnClickListener {
@@ -54,8 +57,18 @@ class SettingFragment : Fragment() {
             account.setOnClickListener {
                 startActivity(Intent(requireContext(), AccountActivity::class.java))
             }
+
+            history.setOnClickListener {
+                startActivity(Intent(requireContext(), HistoryActivity::class.java))
+            }
         }
         setTheme()
+    }
+
+    private fun observeHistoryCount() {
+        settingViewModel.historyCount.observe(viewLifecycleOwner) { count ->
+            binding.tvTotalHistoryValue.text = count.toString()
+        }
     }
 
     private fun observeNameUser() {
