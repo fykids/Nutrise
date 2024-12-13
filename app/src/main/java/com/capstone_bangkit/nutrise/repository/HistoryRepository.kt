@@ -8,9 +8,9 @@ import com.capstone_bangkit.nutrise.database.HistoryDatabase
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-class HistoryRepository(application: Application) {
-    private val mHistoryDao: HistoryDao
-    private val executorService: ExecutorService = Executors.newSingleThreadExecutor()
+class HistoryRepository(application : Application) {
+    private val mHistoryDao : HistoryDao
+    private val executorService : ExecutorService = Executors.newSingleThreadExecutor()
 
     init {
         val db = HistoryDatabase.getDatabase(application)
