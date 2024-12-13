@@ -4,7 +4,7 @@ Selamat datang di **Nutrise**, aplikasi terbaik untuk Capstone Project Bangkit B
 
 ## Download APK
 Klik tautan berikut untuk mengunduh aplikasi:
-[📥 Download APK]([app-release.apk](https://github.com/fykids/Nutrise/blob/new/app-release.apk)
+[📥 Download APK]([app-release.apk](https://github.com/fykids/Nutrise/blob/new/app-release.apk))
 
 ## Panduan Instalasi
 1. Unduh file APK dari tautan di atas.
