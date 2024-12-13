@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Nutrise</string>
+    <string name="title_home">Home</string>
+    <string name="title_news">News</string>
+    <string name="title_setting">Setting</string>
+    <string name="page_login">Masuk</string>
+    <string name="desc_login">Ayo lihat nutrisi yang ada pada makanan yang kamu suka</string>
+    <string name="page_register">Daftar</string>
+    <string name="desc_register">Ayo daftar sekarang!</string>
+    <string name="logo_aplikasi">logo aplikasi</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="logout">Keluar</string>
+    <string name="username">Username</string>
+    <string name="user123">User123</string>
+    <string name="total_history">Total History</string>
+    <string name="_0">0</string>
+    <string name="privasi">Privasi</string>
+    <string name="history_scan">History Scan</string>
+    <string name="history_scan_">History Scan</string>
+    <string name="next">Next</string>
+    <string name="ganti_username_dan_password">Ganti Username dan Password</string>
+    <string name="akun">Akun</string>
+    <string name="setting_mode_malam">Setting Mode Malam</string>
+    <string name="setting_mode_malam_">Setting Mode Malam</string>
+    <string name="edit_informasi_akun">Edit Informasi Akun</string>
+    <string name="button_text">Lanjut</string>
+    <string name="logo">logo</string>
+    <string name="title_onboarding1">Play Anywhere</string>
+    <string name="description_onboarding1">The video call feature can be accessed from anywhere in your house to help you.</string>
+
+    <string name="title_onboarding2">Stay Healthy</string>
+    <string name="description_onboarding2">Nobody likes to be alone and the built-in group video call feature helps you connect.</string>
+
+    <string name="title_onboarding3">Make Connections</string>
+    <string name="description_onboarding3">While working the app reminds you to smile, laugh, walk and talk with those who matters.</string>
+</resources>
