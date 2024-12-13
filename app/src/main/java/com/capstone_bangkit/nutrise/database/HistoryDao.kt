@@ -17,4 +17,10 @@ interface HistoryDao {
 
     @Delete
     fun delete(history : History)
+
+    @Query("SELECT COUNT(*) FROM history")
+    fun getHistoryCount(): LiveData<Int>
+
+    @Query("DELETE FROM history")
+    fun deleteAllHistory()
 }

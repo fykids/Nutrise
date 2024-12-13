@@ -33,4 +33,5 @@
 
     <string name="title_onboarding3">Make Connections</string>
     <string name="description_onboarding3">While working the app reminds you to smile, laugh, walk and talk with those who matters.</string>
+    <string name="image_description">description</string>
 </resources>
