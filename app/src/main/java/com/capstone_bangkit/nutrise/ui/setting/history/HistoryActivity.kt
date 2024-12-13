@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.Observer
 import com.capstone_bangkit.nutrise.R
 import com.capstone_bangkit.nutrise.databinding.ActivityHistoryBinding
-import com.capstone_bangkit.nutrise.database.History
 
 class HistoryActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHistoryBinding
-    private val historyViewModel: HistoryViewModel by viewModels()
-    private lateinit var historyAdapter: HistoryAdapter
+    private lateinit var binding : ActivityHistoryBinding
+    private val historyViewModel : HistoryViewModel by viewModels()
+    private lateinit var historyAdapter : HistoryAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Inflate layout dan set sebagai konten tampilan
@@ -47,25 +44,27 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     // Menambahkan opsi menu pada toolbar
-    override fun onCreateOptionsMenu(menu: android.view.Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu : android.view.Menu?) : Boolean {
         menuInflater.inflate(R.menu.history_menu, menu)
         return true
     }
 
     // Menambahkan aksi untuk menghapus history saat ikon di toolbar ditekan
-    override fun onOptionsItemSelected(item: android.view.MenuItem): Boolean {
+    override fun onOptionsItemSelected(item : android.view.MenuItem) : Boolean {
         return when (item.itemId) {
             R.id.action_delete_history -> {
                 // Menghapus semua history
                 historyViewModel.deleteAllHistory()
                 true
             }
+
             android.R.id.home -> {
                 // Navigasi kembali ke activity sebelumnya
                 @Suppress("DEPRECATION")
                 onBackPressed()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
